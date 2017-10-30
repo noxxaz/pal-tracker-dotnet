@@ -1,5 +1,3 @@
-﻿using System.Collections.Generic;
-using Microsoft.Extensions.Configuration;
 using PalTracker;
 using Xunit;
 
