@@ -9,6 +9,8 @@ project.lock.json
 *.user
 *.userosscache
 *.sln.docstates
+*.vscode
+variables.yml
 
 # Build results
 [Dd]ebug/

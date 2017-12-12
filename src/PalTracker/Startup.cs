@@ -29,6 +29,17 @@ namespace PalTracker
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddSingleton(sp => new WelcomeMessage(
+                Configuration.GetValue<string>("WELCOME_MESSAGE")
+            ));
+
+            services.AddSingleton(sp => new CloudFoundryInfo(
+                Configuration.GetValue<string>("PORT"),
+                Configuration.GetValue<string>("MEMORY_LIMIT"),
+                Configuration.GetValue<string>("CF_INSTANCE_INDEX"),
+                Configuration.GetValue<string>("CF_INSTANCE_ADDR")
+            ));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
