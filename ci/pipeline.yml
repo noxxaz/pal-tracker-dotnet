@@ -97,6 +97,4 @@ jobs:
         WELCOME_MESSAGE: Hello from the production environment
   - put: tweet
     params:
-      status: >
-      @ConcourseCI build ${BUILD_ID} deploy to prod...
-      
+      status: Concourse build ${BUILD_ID} deploy to prod...
