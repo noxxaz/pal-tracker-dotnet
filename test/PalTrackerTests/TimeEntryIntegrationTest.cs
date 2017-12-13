@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PalTracker;
 using Xunit;
+using static PalTrackerTests.DbTestSupport;
 
 namespace PalTrackerTests
 {
@@ -17,6 +18,8 @@ namespace PalTrackerTests
 
         public TimeEntryIntegrationTest()
         {
+            Environment.SetEnvironmentVariable("VCAP_SERVICES", TestDbVcapJson);
+            ExecuteSql("TRUNCATE TABLE time_entries");
             _testClient = IntegrationTestServer.Start().CreateClient();
         }
 
